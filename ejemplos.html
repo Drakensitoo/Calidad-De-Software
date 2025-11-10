@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplos de Aplicación - CodeTrust</title>
+  <meta name="description" content="Casos prácticos de aplicación de las normas ISO en proyectos de software reales.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">CodeTrust</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="descripcion.html">Descripción</a></li>
+        <li><a href="temas.html">Temas</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="services">
+    <h2>Ejemplos de Aplicación de Calidad de Software</h2>
+    <p>A continuación, se presentan casos prácticos que ilustran cómo las normas de calidad se aplican en proyectos de software reales para mejorar sus resultados.</p>
+
+    <!-- Sección Ejemplo 1 -->
+    <section class="example-section" style="margin-top: 40px;">
+      <h3>Ejemplo 1: Programación sin aplicar normas ISO</h3>
+      <div class="content-container" style="margin-top: 20px;">
+        <div class="text-content">
+          <h4>Código (sin normas ni buenas prácticas):</h4>
+          <pre><code># Calcula el promedio de notas (sin validaciones, sin estructura clara)
+def promedio(notas):
+  suma = 0
+  for n in notas:
+    suma += n
+  return suma / len(notas)
+
+notas = [5, 4, 2, 3, 1]
+print(promedio(notas))</code></pre>
+          <h4>Problemas del código:</h4>
+          <ul>
+            <li>No tiene documentación ni comentarios técnicos claros.</li>
+            <li>No valida errores (por ejemplo, si la lista está vacía).</li>
+            <li>No sigue una estructura estandarizada de desarrollo.</li>
+            <li>No tiene nombres descriptivos ni formato de código uniforme.</li>
+            <li>No hay pruebas, control de versiones ni métricas de calidad.</li>
+          </ul>
+          <h4>Consecuencia:</h4>
+          <p>El software puede funcionar inicialmente, pero será difícil de mantener, poco confiable y no cumplirá estándares de calidad exigidos por las organizaciones.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección Ejemplo 2 -->
+    <section class="example-section">
+      <h3>Ejemplo 2: Programación siguiendo normas ISO</h3>
+      <div class="content-container" style="margin-top: 20px;">
+        <div class="text-content">
+          <h4>Código mejorado (con buenas prácticas y estándares de calidad):</h4>
+          <pre><code>"""
+Módulo: calculo_promedio.py
+Descripción: Calcula el promedio de notas validando datos de entrada.
+Normas aplicadas:
+- ISO/IEC 25010: Calidad del producto (fiabilidad, mantenibilidad, usabilidad).
+- ISO/IEC 12207: Proceso de desarrollo y documentación.
+"""
+def calcular_promedio(lista_notas):
+    if not lista_notas:
+        raise ValueError("La lista de notas no puede estar vacía.")
+    if not all(0 <= n <= 5 for n in lista_notas):
+        raise ValueError("Las notas deben estar entre 0 y 5.")
+    promedio = sum(lista_notas) / len(lista_notas)
+    return round(promedio, 2)
+# Prueba unitaria básica (parte del proceso de verificación ISO/IEC 12207)
+if __name__ == "__main__":
+    try:
+        notas_estudiante = [5, 4.5, 3, 4, 5]
+        print("Promedio del estudiante:", calcular_promedio(notas_estudiante))
+    except ValueError as e:
+        print("Error:", e)</code></pre>
+          <h4>Buenas prácticas aplicadas:</h4>
+          <ul>
+            <li>Cumple con la documentación técnica y estructuración de código.</li>
+            <li>Incluye validaciones de entrada, mejorando la fiabilidad.</li>
+            <li>Usa nombres descriptivos y consistentes.</li>
+            <li>Integra una prueba unitaria básica para verificar el funcionamiento.</li>
+          </ul>
+          <h4>Resultado:</h4>
+          <p>El código es seguro, mantenible, confiable y comprensible. Cumple estándares de calidad y facilita su evaluación.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <section class="footer-section">
+        <h3>CodeTrust</h3>
+      </section>
+      <section class="footer-section">
+        <h3>Contacto</h3>
+        <p>SAMUEL LEANDRO ORJUELA PAEZ</p>
+        <p>FRANCISCO JOSE ORTEGA QUINTERO</p>
+        <p>STELLA VALENTINA NARANJO CABEZAS</p>
+        <p>CALIDAD DEL SOFTWARE/54427</p>
+      </section>
+    </div>
+    <div class="footer-bottom">
+      <small>© 2025 Corporación Unificada Nacional de Educación Superior. Todos los derechos reservados.</small>
+    </div>
+  </footer>
+</body>
+</html>

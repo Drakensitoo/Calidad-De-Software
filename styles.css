@@ -1,0 +1,317 @@
+/* ==========================================================
+   Proyecto: CodeTrust - Página de demostración
+   Estándares: ISO/IEC 25000 - ISO/IEC 90003 - ISO/IEC 29110
+   ========================================================== */
+
+/* === RESET Y VARIABLES === */
+:root {
+    --color-primario: #1e3a8a;
+    --color-secundario: #3b82f6;
+    --color-fondo: #f5f7fa;
+    --color-texto: #333;
+    --color-blanco: #fff;
+}
+
+/* === RESETEO GENERAL === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* === CUERPO GENERAL === */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Hace que el contenido principal crezca para empujar el footer hacia abajo */
+main {
+    flex-grow: 1;
+}
+
+/* === NAVBAR === */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-primario);
+    padding: 15px 40px;
+    color: var(--color-blanco);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: var(--color-blanco);
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #a5b4fc;
+}
+
+/* === HERO === */
+.hero {
+    background: linear-gradient(120deg, var(--color-primario), var(--color-secundario));
+    text-align: center;
+    padding: 120px 20px;
+    color: var(--color-blanco);
+}
+
+.hero-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: var(--color-blanco);
+    color: var(--color-primario);
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #e0e7ff;
+}
+
+/* === SECCIÓN SERVICIOS === */
+.services {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.service-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: var(--color-blanco);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    width: 280px;
+    text-align: left;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: var(--color-primario);
+    margin-bottom: 10px;
+}
+
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0; /* Redondea solo las esquinas superiores */
+    margin: -20px -20px 15px -20px; /* Ajusta para que la imagen ocupe todo el ancho superior */
+}
+
+.card a {
+    text-decoration: none; /* Quita el subrayado del enlace */
+    color: inherit; /* Hereda el color del texto del padre */
+}
+
+/* === FOOTER === */
+.footer {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    margin-top: 50px;
+    padding-top: 40px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding-bottom: 20px;
+}
+
+.footer-section h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.footer-section p,
+.footer-section a {
+    font-size: 0.95rem;
+    color: #dbeafe;
+}
+
+.footer-section a:hover {
+    color: #93c5fd;
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 15px 0;
+    background-color: #162e6d;
+    font-size: 0.9rem;
+}
+
+/* === PÁGINAS DE CONTENIDO CON IMAGEN === */
+.content-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Para responsividad */
+}
+
+.text-content {
+    flex: 1; /* Ocupa el espacio disponible */
+    min-width: 300px; /* Ancho mínimo para el texto */
+    text-align: left;
+}
+
+.text-content p {
+    margin-bottom: 1em; /* Espacio entre párrafos */
+}
+
+/* Evita el margen en el último párrafo para que no haya espacio extra al final */
+.text-content p:last-child {
+    margin-bottom: 0;
+}
+
+.image-container {
+    flex: 0 0 400px; /* No crece, no se encoge, base de 400px */
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* === ESTILOS PARA PÁGINA DE EJEMPLOS === */
+.text-content h4 {
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    color: var(--color-primario);
+}
+
+.text-content ul {
+    list-style-position: inside;
+    padding-left: 1em;
+    margin-bottom: 1em;
+}
+
+.text-content ul li {
+    margin-bottom: 0.5em;
+}
+
+.text-content pre {
+    background-color: #2d3748; /* Fondo oscuro para el código */
+    color: #e2e8f0; /* Texto claro para contraste */
+    padding: 1em;
+    border-radius: 8px;
+    overflow-x: auto; /* Para líneas de código largas */
+    margin-bottom: 1em;
+    white-space: pre-wrap; /* Ajusta el texto del código */
+}
+
+/* Espaciado entre secciones de ejemplos */
+.example-section + .example-section {
+    margin-top: 60px;
+}
+
+/* === ESTILOS PARA PÁGINA DE NORMAS === */
+.text-content ol {
+    padding-left: 1.5em;
+    margin-bottom: 1em;
+}
+
+.text-content ol li {
+    margin-bottom: 1.5em;
+}
+
+.content-divider {
+    border: 0;
+    height: 1px;
+    background-color: #ddd;
+    margin: 40px 0;
+}
+
+/* === FORMULARIO DE CONTACTO === */
+.contact-form {
+    max-width: 600px;
+    margin: 40px auto 0 auto;
+    padding: 30px;
+    background: var(--color-blanco);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-secundario);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
